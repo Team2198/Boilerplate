@@ -117,7 +117,8 @@ public class BandAidDrive extends RobotDriveBase {
      */
     public BandAidDrive(SpeedController leftMotor, SpeedController rightMotor) {
         verify(leftMotor, rightMotor);
-        m_leftMotor = leftMotor;
+        m_leftMotor = 
+        leftMotor;
         m_rightMotor = rightMotor;
         addChild(m_leftMotor);
         addChild(m_rightMotor);

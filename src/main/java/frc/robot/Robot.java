@@ -31,9 +31,10 @@ public class Robot extends TimedRobot {
     private XboxController controller2 = new XboxController(1);
     private Driver drive = new Driver(controller);
     private Hatch hatch = new Hatch(controller, controller2);
-    ParadigmSystem[] systems = { drive, hatch, new Shooter(controller2) };
+    ParadigmSystem[] systems = {drive, hatch, new Shooter(controller2), new TestSystem(controller)};
 
     public Robot() {
+        
         // Initialize Camera
         //CameraServer.getInstance().startAutomaticCapture();
     }
@@ -43,6 +44,7 @@ public class Robot extends TimedRobot {
         systems[0].enable();
         systems[1].enable();
         systems[2].enable();
+        systems[3].enable();
     }
 
     @Override
@@ -54,6 +56,7 @@ public class Robot extends TimedRobot {
         systems[0].update();
         systems[1].update();
         systems[2].update();
+        systems[3].update();
     }
 
     @Override
@@ -97,5 +100,6 @@ public class Robot extends TimedRobot {
         systems[0].disable();
         systems[1].disable();
         systems[2].disable();
+        systems[3].disable();
     }
 }
